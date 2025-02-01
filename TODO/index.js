@@ -16,9 +16,8 @@ app.get("/", (req, res) => {
 
 app.use('/api/todos', todo_toute)
 
-ConnectToDb()
-// app.listen(port, () => {
-//     console.log(`Server is listing on port no ${port} `);
-// })
+app.listen(port, () => {
+    ConnectToDb()
+    console.log(`Server is listing on port no ${port} `);
+})
 
-export default app
