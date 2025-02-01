@@ -1,15 +1,14 @@
 import mongoose from "mongoose";
 
-
 const postSchema = new mongoose.Schema(
     {
         title: {
             type: String,
-            required: true
+            required: true,
         },
         content: {
             type: String,
-            required: true
+            required: true,
         },
         author: {
             type: mongoose.Schema.Types.ObjectId,
@@ -18,19 +17,15 @@ const postSchema = new mongoose.Schema(
         },
         category: {
             type: String,
-            required: true
+            required: true,
         },
         tags: [{ type: String }],
-        likes: [
-            { type: mongoose.Schema.Types.ObjectId, ref: "User" }
-        ],
-        comments: [
-            { type: mongoose.Schema.Types.ObjectId, ref: "Comment" }
-        ],
+        likes: [{ type: mongoose.Schema.Types.ObjectId, ref: "User" }],
+        comments: [{ type: mongoose.Schema.Types.ObjectId, ref: "Comment" }],
     },
+
     { timestamps: true }
 );
 
-
-const Post = mongoose.model("Post", postSchema)
-export default Post
+const Post = mongoose.model("Post", postSchema);
+export default Post;
